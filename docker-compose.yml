@@ -13,7 +13,6 @@ services:
   server:
     build:
       context: .
-      dockerfile: .
     profiles: [prod]
     env_file:
       - env.properties
