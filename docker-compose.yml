@@ -2,6 +2,8 @@ services:
   db:
     image: postgres
     restart: always
+    env_file:
+      - env.properties
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -10,6 +12,8 @@ services:
       - '5432:5432'
   server:
     profiles: [prod]
+    env_file:
+      - env.properties
     ports:
       - '8080:8080'
     environment:
