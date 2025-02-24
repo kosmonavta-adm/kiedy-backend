@@ -11,6 +11,9 @@ services:
     ports:
       - '5432:5432'
   server:
+    build:
+      context: .
+      dockerfile: .
     profiles: [prod]
     env_file:
       - env.properties
